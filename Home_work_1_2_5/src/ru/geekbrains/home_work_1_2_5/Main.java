@@ -1,5 +1,7 @@
 package ru.geekbrains.home_work_1_2_5;
 
+import java.util.Arrays;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -13,19 +15,26 @@ public class Main {
     }
 
     public static void processArray1(int n) {
+
         System.out.println("Время начала работы первого метода " + System.currentTimeMillis());
         System.out.println("Обрабатываем первый массив:");
+
         long a = System.currentTimeMillis();
         int halfSize = n;
-        float array1[] = new float[n * 2];
+        float array1[] = new float[halfSize * 2];
         for (float i : array1
         ) {
             array1[(int) i] = 1;
-        }
-        for (float i : array1)
-            array1[(int) i] = (float) (array1[(int) i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
-        System.out.println( "Первый массив преобразован за " + (System.currentTimeMillis() - a)+ " мсек");
 
+        }
+
+
+
+        for (float i : array1) {
+            array1[(int) i] = (float) (array1[(int) i] * Math.sin(0.2f + i / 5) * Math.cos(0.2f + i / 5) * Math.cos(0.4f + i / 2));
+
+        }
+        System.out.println( "Первый массив преобразован за " + (System.currentTimeMillis() - a)+ " мсек");
 
     }
 
@@ -39,8 +48,7 @@ public class Main {
         float array2SecondHalf[] = new float[n];
         long b = System.currentTimeMillis();
 
-        for (float i : array2
-        ) {
+        for (float i : array2) {
             array2[(int) i] = 1;
         }
         System.out.println("Начали разбивать массив через " + (System.currentTimeMillis() - b) + " мсек после начала работы метода");
